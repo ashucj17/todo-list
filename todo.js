@@ -11,19 +11,16 @@ console.log(firstHeading);
 let parentEl = document.getElementById("container");
 parentEl.appendChild(firstHeading);
 
-function addTodo() {
-  // Dynamic UL
-  let listUl = document.createElement("ul");
-  listUl.setAttribute("id", "list");
-  parentEl.appendChild(listUl);
-  // console.log(listUl);
-  let listLi = document.createElement("li");
-  listLi.setAttribute("id", "listItem");
-  // listLi.innerHTML = "Todo Task 1";
-  let parentList = document.getElementById("list");
-  parentList.appendChild(listLi);
-  listLi.innerHTML = inputText;
-}
+// Dynamic UL
+let listUl = document.createElement("ul");
+listUl.setAttribute("id", "list");
+parentEl.appendChild(listUl);
+// console.log(listUl);
+let listLi = document.createElement("li");
+listLi.setAttribute("id", "listItem");
+listLi.innerHTML = "Todo Task 1";
+let parentList = document.getElementById("list");
+parentList.appendChild(listLi);
 
 // Dynamic input element
 let inputText = document.createElement("input");
@@ -39,3 +36,7 @@ let addBtn = document.createElement("button");
 addBtn.setAttribute("onclick", "addTodo()");
 addBtn.innerHTML = "Add Todo";
 parentEl.appendChild(addBtn);
+
+function addTodo() {
+  listLi.innerHTML = inputText;
+}
