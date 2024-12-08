@@ -11,6 +11,7 @@ function taskList() {
   let parentUl = document.getElementById("task-list");
   parentUl.appendChild(addTask);
   i++; /* used to increment the id */
+  inputVl = "";
 }
 
 // function deleteTask(index) {
