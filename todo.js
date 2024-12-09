@@ -42,6 +42,11 @@ parentEl.appendChild(addBtn);
 
 function addTodo() {
   let newListItem = document.createElement("li");
-  newListItem.innerHTML = inputText.value;
+  newListItem.innerHTML =
+    inputText.value + `<button onclick = "deleteTodo()"> Delete Task </button>`;
   document.getElementById("list").appendChild(newListItem);
+}
+
+function deleteTodo() {
+  let deleteEl = document.getElementById("list");
 }
