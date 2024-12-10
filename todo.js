@@ -16,10 +16,10 @@ let listUl = document.createElement("ul");
 listUl.setAttribute("id", "list");
 parentEl.appendChild(listUl);
 // console.log(listUl);
-
+let i = 0;
 // created dynamic list and appended with onCLick function
 let listLi = document.createElement("li");
-listLi.setAttribute("id", "listItem");
+listLi.setAttribute("id", `listItem${i}`);
 
 // listLi.innerHTML = "Todo Task 1";
 // let parentList = document.getElementById("list");
@@ -42,11 +42,16 @@ parentEl.appendChild(addBtn);
 
 function addTodo() {
   let newListItem = document.createElement("li");
+  newListItem.setAttribute("id", `listItem${i}`);
   newListItem.innerHTML =
-    inputText.value + `<button onclick = "deleteTodo()"> Delete Task </button>`;
+    inputText.value +
+    `<button onclick = 'deleteTodo("listItem${i}")'> Delete Task </button>`;
   document.getElementById("list").appendChild(newListItem);
+  i++;
+  inputText.value = "";
 }
 
-function deleteTodo() {
-  let deleteEl = document.getElementById("list");
+function deleteTodo(task) {
+  let deleteEl = document.getElementById(task);
+  deleteEl.parentNode.removeChild(deleteEl);
 }
